@@ -65,6 +65,7 @@ font-size: 16px;
 
 .entry{
     background: rgba(59, 74, 107, .4);
+    font-size: 2rem;
 }
 
 #entryHolder{
