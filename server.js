@@ -3,8 +3,8 @@ const projectData = {};
 
 // Require Express to run server and routes
 
-const express = require("express")
-const cors = require("cors")
+const express = require("express");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 // Start up an instance of app
 const app = express();
@@ -15,33 +15,29 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Cors for cross origin allowance
-app.use(cors())
+app.use(cors());
 // Initialize the main project folder
-app.use(express.static('website'));
+app.use(express.static("website"));
 
+//HTTP handlers
 
-//HTTP handlers 
-app.get("/all",(req,res)=>{
-    res.send(projectData);
+//sending all the data
+app.get("/all", (req, res) => {
+  res.send(projectData);
 });
 
+//Getting data
+app.post("/newData", (req, res) => {
+  const newEntrey = req.body;
+  projectData.temperature = newEntrey.temperature;
+  projectData.date = newEntrey.date;
+  projectData.userResponse = newEntrey.userResponse;
 
-app.post("/newData",(req,res)=>{
-    
-    
-    projectData.temperature= req.body.temperature;
-    projectData.date= req.body.date;
-    projectData.userResponse= req.body.userResponse;
-
-    console.log(projectData);
-    res.send(projectData)
-
-
-    
-})
+  res.send(projectData);
+});
 
 // Setup Server
 const port = 3000;
-app.listen(port,()=>{
-    console.log(`server is running on port ${port} `);
-})
+app.listen(port, () => {
+  console.log(`server is running on port ${port} `);
+});

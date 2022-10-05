@@ -1,23 +1,66 @@
+*{
+    text-align: center;
+    margin: 0;
+   
+
+}
+
+
 body{
-    background: #fffff8;
+z-index: 5;
+font-size: 16px;
+
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+    
+}
+
+#background_image {
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(10px) ;
+    -webkit-filter: blur(10px) ;
+    animation: imageAnimation ease-in-out 3s  ;
+    -webkit-animation: imageAnimation ease-in-out 3s  ;
+}
+
+@keyframes imageAnimation {
+    
+    0%{
+        transform: scale(1.7);
+        filter: blur(0px);
+        -webkit-filter: blur(0px);
+        -webkit-transform: scale(1.7);
+        -moz-transform: scale(1.7);
+        -ms-transform: scale(1.7);
+        -o-transform: scale(1.7);
+}
 }
 
 #app{
-    display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    /* grid-template-columns:  */
-    height:100vh;
-    background: #f23557;
-    color: #f0d43a;
-    justify-content: center;
-    grid-gap: 1em;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: center;
+  align-items: center;
+  color: #fbf6f1;
+ 
+  font-size: 2rem;
+  font-family: 'Oswald', sans-serif;
+
 }
 
 .holder{
-
+    margin-top: 10px;
+    background-color: #2b2b2a52;
+    border-radius:10% ;
+    -webkit-border-radius:10% ;
+    -moz-border-radius:10% ;
+    -ms-border-radius:10% ;
+    -o-border-radius:10% ;
 }
 
 .entry{
@@ -57,32 +100,67 @@ input{
     display:block;
     height: 60px;
     width: 320px;
-    background:#22b2da;
+    background:#7475768d;
     color: #f0d43a;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: none;
 }
 
+button:hover{
+    animation: btnAnimation ease-in-out 3s  ;
+    -webkit-animation: btnAnimation ease-in-out 3s  ;
+}
+
+@keyframes btnAnimation{
+
+    0%{
+     transform: scale(0.98);
+     -webkit-transform: scale(0.98);
+     -moz-transform: scale(0.98);
+     -ms-transform: scale(0.98);
+     -o-transform: scale(0.98);
+}
+
+50%{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+}
+
 button{
-    width: 400px;
+    border-radius: 10%;
+    margin-top: 10px;
+    width: 200px;
     height: 100px;
-    background: #3b4a6b;
+    background:#474748cd;
     color: #f0d43a;
     font-size: 26px;
     font-family: 'Oswald', sans-serif;
     border: none;
     box-shadow: 2px 4px 5px #444;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
 }
 h1{
-    font-size: 36px;
+    font-size: 5rem;
 }
 
 textarea{
-    background:#22b2da;
+    background:#747576cd;
     color: #f0d43a;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
+    border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
 }
 /* Reset style for HTML element on active to have no border*/
 input:focus,
